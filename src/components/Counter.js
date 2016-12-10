@@ -9,6 +9,7 @@ const Counter = (props) => {
       <p>Counter: {props.counter}&nbsp;
         <button type="submit" onClick={props.decreaseCount}>-</button>
         <button type="submit" onClick={props.increaseCount}>+</button>
+        <button type="submit" onClick={props.incrementAsync}>...+</button>
       </p>
     </div>
   )

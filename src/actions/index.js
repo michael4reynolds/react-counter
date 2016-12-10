@@ -13,3 +13,11 @@ export const decreaseCount = () => {
     payload: -1
   }
 }
+
+export const incrementAsync = () => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(increaseCount())
+    }, 1000)
+  }
+}
