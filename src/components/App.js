@@ -11,9 +11,6 @@ class App extends Component {
           <Logo src={logo} alt="logo"/>
           <h2>Welcome to React</h2>
         </Header>
-        <Intro>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </Intro>
         <Counter/>
       </AppWrapper>
     );
