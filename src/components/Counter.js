@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../actions'
 
-const Counter = (props) => {
+const Counter = ({counter, increaseCount, decreaseCount, incrementAsync}) => {
   return (
     <div>
       <h1>Superstitious Counter Component</h1>
-      <p>Counter: {props.counter}&nbsp;
-        <button type="submit" onClick={props.decreaseCount}>-</button>
-        <button type="submit" onClick={props.increaseCount}>+</button>
-        <button type="submit" onClick={props.incrementAsync}>...+</button>
+      <p>Counter: {counter}&nbsp;
+        <button type="submit" onClick={decreaseCount}>-</button>
+        <button type="submit" onClick={increaseCount}>+</button>
+        <button type="submit" onClick={incrementAsync}>...+</button>
       </p>
     </div>
   )
