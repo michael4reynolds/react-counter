@@ -1,33 +1,23 @@
-import React, {Component} from 'react'
+import React from 'react'
+import {connect} from 'react-redux'
+import * as actions from '../actions'
 
-class Counter extends Component {
-  state = {
-    count: 0
-  }
+const Counter = (props) => {
+  return (
+    <div>
+      <h1>Superstitious Counter Component</h1>
+      <p>Counter: {props.counter}&nbsp;
+        <button type="submit" onClick={props.decreaseCount}>-</button>
+        <button type="submit" onClick={props.increaseCount}>+</button>
+      </p>
+    </div>
+  )
+}
 
-  increaseCount = () => {
-    this.setState({
-      count: this.state.count + 1
-    })
-  }
-
-  decreaseCount = () => {
-    this.setState({
-      count: this.state.count - 1
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Superstitious Counter Component</h1>
-        <p>Counter: {this.state.count}&nbsp;
-          <button type="submit" onClick={this.decreaseCount}>-</button>
-          <button type="submit" onClick={this.increaseCount}>+</button>
-        </p>
-      </div>
-    )
+function mapStateToProps(state) {
+  return {
+    counter: state.counter
   }
 }
 
-export default Counter
+export default connect(mapStateToProps, actions)(Counter)
