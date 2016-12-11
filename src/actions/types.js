@@ -1,2 +1,3 @@
 export const INC_ACTION = 'INC_ACTION'
 export const DEC_ACTION = 'DEC_ACTION'
+export const INCREMENT_ASYNC = 'INCREMENT_ASYNC'

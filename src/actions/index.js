@@ -1,4 +1,4 @@
-import {INC_ACTION, DEC_ACTION} from "./types"
+import {INC_ACTION, DEC_ACTION, INCREMENT_ASYNC} from "./types"
 
 export const increaseCount = () => {
   return {
@@ -15,9 +15,7 @@ export const decreaseCount = () => {
 }
 
 export const incrementAsync = () => {
-  return dispatch => {
-    setTimeout(() => {
-      dispatch(increaseCount())
-    }, 1000)
+  return {
+    type: INCREMENT_ASYNC
   }
 }

@@ -1,11 +1,14 @@
 import {createStore, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 import {logger, superstitiousMode} from './middleware'
 import reducers from './reducers'
+import rootSaga from './sagas'
 
+const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
   reducers,
-  applyMiddleware(thunk, logger, superstitiousMode)
+  applyMiddleware(sagaMiddleware, logger, superstitiousMode)
 )
+sagaMiddleware.run(rootSaga)
 
 export default store
