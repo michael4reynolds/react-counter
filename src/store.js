@@ -3,7 +3,9 @@ import thunk from 'redux-thunk'
 import {logger, superstitiousMode} from './middleware'
 import reducers from './reducers'
 
-const createStoreWithMiddleware =
-  applyMiddleware(thunk, logger, superstitiousMode)(createStore)
+const store = createStore(
+  reducers,
+  applyMiddleware(thunk, logger, superstitiousMode)
+)
 
-export default createStoreWithMiddleware(reducers)
+export default store
