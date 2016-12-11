@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../logo.svg';
-import {AppWrapper, Logo, Header, Intro} from '../styles/App'
+import {AppWrapper, Logo, Header} from '../styles/App'
 import Counter from './Counter'
 
 class App extends Component {
